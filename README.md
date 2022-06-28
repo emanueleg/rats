@@ -19,8 +19,6 @@ A questo punto, tutte le volte successive sarà sufficiente attivare l'ambiente 
 
 ## Limiti e problemi
 
-1. RATS non funziona come dovrebbe.
-2. Il punto 1. dovrebbe essere sufficiente, ma un forte limite è il dataset LIS, che non ha etichette per molte parole oggettivamente negative o positive.
-3. Inoltre, il dataset LIS non contiene pesi con valore continuo ma solo valori discreti tripolari (+1/0/-1); sarebbe utile avere altri valori.
-4. Il codice di RATS considera le singole parole e non tiene perciò conto, ad esempio, delle negazioni ("non brutto" è davvero doppiamente negativo? o dovrebbe essere positivo? e quanto più positivo rispetto a bello?).
-5. Ci sarebbe molto altro da dire, ma bastano i primi 4 punti a rendere RATS un fallimento :-)
+1. RATS non funziona come dovrebbe: considera le singole parole e non tiene conto, ad esempio, del contesto e delle negazioni ("non brutto" è davvero doppiamente negativo? o dovrebbe essere positivo? e quanto più positivo rispetto a bello?).
+2. Il punto 1. dovrebbe essere sufficiente, ma... il dataset LIS contiene solo pesi discreti tripolari +1/0/-1 (sarebbe utile avere altri valori) e non ha etichette per molte parole oggettivamente negative o positive.
+3. Ci sarebbe molto altro da dire, ma basta questo punti a rendere RATS un fallimento :-)
