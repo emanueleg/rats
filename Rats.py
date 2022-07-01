@@ -3,7 +3,7 @@ import re
 import hunspell  # install libhunspell-dev
 import collections
 from LexiconMod import LexiconSent # from https://dspace-clarin-it.ilc.cnr.it/repository/xmlui/handle/20.500.11752/ILC-73
-
+from Spatana import Spatana
 
 # RATS - Rustico Analizzatore Testuale di Sentimenti
 class Rats:
@@ -16,8 +16,11 @@ class Rats:
     posw = 0
     negw = 0
 
-    def __init__(self, language, dict_path, aff_path):
-        self.lex = LexiconSent(language)
+    def __init__(self, language, dict_path, aff_path, spatana_db=None):
+        if spatana_db is not None:
+            self.lex = Spatana(spatana_db)
+        else:
+            self.lex = LexiconSent(language)
         self.text = ""
         self.hobj = hunspell.HunSpell(dict_path, aff_path)
         self.arr = []

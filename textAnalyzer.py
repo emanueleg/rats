@@ -7,6 +7,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-f', '--filename', help='input file', metavar='BASEFILENAME', required=True)
 parser.add_argument('-d', '--dictdir', help='language dir', metavar='DIRPATH', default="/usr/share/hunspell/")
 parser.add_argument('-l', '--lang', help='language', metavar='ISOLANG', default="it_IT")
+parser.add_argument('-s', '--sqlite3', help='database', default="spatana/mydb.sqlite3")
+parser.add_argument('-p', '--use-spatana', help='spatana engine', default=True, action=argparse.BooleanOptionalAction)
 parser.add_argument('--csvoutput', default=False, action=argparse.BooleanOptionalAction)
 parser.add_argument('--csvheadings', default=True, action=argparse.BooleanOptionalAction)
 
@@ -23,8 +25,11 @@ TRANSCRIPTION = args.filename
 
 ### CORE FUNCTIONS ###
 
-sent = Rats(LANG, HUNSPELL_DIC, HUNSPELL_AFF)
-
+if args.use_spatana:
+    sent = Rats(LANG, HUNSPELL_DIC, HUNSPELL_AFF, args.sqlite3)
+else:
+    sent = Rats(LANG, HUNSPELL_DIC, HUNSPELL_AFF)
+    
 with open(TRANSCRIPTION, 'r') as file:
     data = file.read()
 
