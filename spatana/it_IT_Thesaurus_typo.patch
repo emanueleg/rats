@@ -1,0 +1,20 @@
+--- th_it_IT_v2.dat	2022-06-20 23:16:14.379544519 +0200
++++ th_it_IT_v2_fixed.dat	2022-06-20 23:16:09.007339183 +0200
+@@ -11370,7 +11370,7 @@
+ (agg.)|esplicito|lineare|logico
+ (agg.)|comprensibile|nitido|percettibile
+ (agg.)|cristallino|limpido|pulito|trasparente
+-(agg.)|deciso|i|perentorio
++(agg.)|deciso|perentorio
+ chiarore|1
+ (s.m.)|albore|bagliore|barlume|fulgore|luce|lucentezza|luminosità|sfolgorio
+ chiaroscuro|1
+@@ -21124,7 +21124,7 @@
+ ebano|1
+ (agg.)|bruno|corvino|nero|scuro
+ ebbene|1
+-(cong. Ongiunzione)|allora|dunque|pertanto
++(cong.)|allora|dunque|pertanto
+ ebbrezza|2
+ (s.f.)|ubriachezza
+ (s.f.)|eccitamento|eccitazione|entusiasmo|euforia
